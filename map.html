@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="map.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <h1>Map Markers</h1>
+    <div id="map"></div>
+    <div id="map-markers" class="map-markers">      
+      <label class="closest-marker">Closest Marker: {{ closestMarker }}</label>
+      <form v-on:submit.prevent="addNewMarker">
+        <label for="new-marker">Add a marker</label>
+        <input 
+          v-model="newAdress"
+          id="new-marker"
+          class="new-marker"
+          placeholder="Address"
+        >
+        <button>Add</button>
+      </form>
+      <ul>
+        <li
+          is="marker-item"
+          v-for="(marker, index) in markers"
+          v-bind:key="marker.id"
+          v-bind:title="marker.title"
+          v-bind:marker="marker.marker"
+          v-on:remove="removeMarker(index)"
+        ></li>
+      </ul>
+    </div>
+    <script src="map.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiXY11VmALPMVDmsiYBvBZyBnUJYtVZN4&callback=initialize&libraries=geometry,places">
+    </script>   
+  </body>
+</html>

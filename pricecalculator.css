@@ -1,0 +1,19 @@
+h1 {
+  color: navy;
+}
+
+.total-price {
+  background-color: navy;
+  color: white;  
+  font-size: 1.2em;
+}
+
+.price-calculator {
+  font-family: 'Courier New', Courier, monospace;
+  width: 550px;
+}
+
+label {
+   width: 140px; 
+   display: inline-block
+}

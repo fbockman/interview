@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="pricecalculator.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app" class="price-calculator">
+            <div>
+              <h1>Price Calculator</h1>                     
+              <div>
+                <label>Price</label>
+                <input v-model.number="price" placeholder="0">
+              </div>
+              <div>
+                <label>Gift Card</label>
+                <input v-model.number="giftCard" placeholder="0" oninput="javascript: if (this.value > 100) this.value = 100;">
+              </div>
+              <div>
+                <label>Discount Code</label>
+                <input v-model="discountCode" placeholder="Enter discount code">
+              </div> 
+              <div class="sale-options">                
+                <input type="checkbox" v-model="isClearanceItem">
+                <label>Clearance Item</label>
+                <input type="checkbox" v-model="isClubMember">
+                <label>Club Member</label>
+                <input type="checkbox" v-model="isCreditPayment">
+                <label>Credit Card</label>
+              </div>
+              <div class="total-price">
+                Discounted Price: {{ total }}   
+              </div>
+            </div>    
+          </div>             
+        <script src="pricecalculator.js"></script>
+    </body>
+</html>
+
+

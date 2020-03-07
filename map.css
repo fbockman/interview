@@ -1,0 +1,25 @@
+#map{
+  height: 500px;
+  width: 900px; 
+}
+h1 {  
+  font-family: 'Courier New', Courier, monospace;
+  color: navy;
+}
+.map-markers {
+  font-family: 'Courier New', Courier, monospace;  
+}
+.closest-marker {
+  background-color: navy;
+  color: white;  
+  font-size: 1.2em;
+  width: 900px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+label {
+  display: inline-block;  
+}
+.new-marker{
+  width: 400px;
+}
