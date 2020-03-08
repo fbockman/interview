@@ -34,7 +34,14 @@
         }
         
         if (this.isClubMember){
-          total = date.getMonth() == 6 ? total * 0.93 : total * 0.95;
+          var discountFactor = 1.0;
+          if (date.getMonth() == 6){
+            discountFactor -= 0.02;
+          }
+          if (!this.isClearanceItem){
+            discountFactor -=0.05;
+          }
+          total = total * discountFactor;
         }
 
         if (total > 500){
